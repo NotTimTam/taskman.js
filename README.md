@@ -36,6 +36,8 @@ const task = () => console.log("Hello, world!"); // The callback to run.
 taskManager.createTask("my-task", task).schedule("*/5 * * * *"); // Run the task every 5 minutes.
 ```
 
+# Reference
+
 ## Importing in CJS
 
 ```js
