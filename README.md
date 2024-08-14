@@ -102,8 +102,3 @@ While tasks can be created and run independently of a task manager, creating the
     -   **identifier**: The unique identifier for the task.
     -   **callback**: The asynchronous function associated with the task.
     -   **Returns**: The newly created `Task` instance.
-
-## Exports
-
--   **`module.exports.default`**: The `TaskManager` class.
--   **`module.exports`**: An object containing the `Task` class.
