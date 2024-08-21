@@ -50,11 +50,32 @@ const { TaskManager, Task } = require("@nottimtam/taskman.js");
 import TaskManager, { Task } from "@nottimtam/taskman.js";
 ```
 
+### `TaskManager`
+
+**Description**: Manages tasks to ensure they do not run in parallel.
+
+#### Constructor
+
+-   **`constructor()`**
+    -   Initializes an empty task manager.
+
+#### Properties
+
+-   **`tasks`**: An object that stores tasks by their identifier.
+
+#### Methods
+
+-   **`createTask(identifier, callback)`**
+    -   Creates a new task with the provided identifier and callback function.
+    -   **identifier**: The unique identifier for the task.
+    -   **callback**: The asynchronous function associated with the task.
+    -   **Returns**: The newly created `Task` instance.
+
 ### `Task`
 
 **Description**: Represents a task with a unique identifier and a callback function. It can be initiated manually or scheduled using a cron job.
 
-While tasks can be created and run independently of a task manager, creating them using a TaskManager's `createTask` method will keep your tasks to be housed in one container.
+While tasks can be created and run independently of a task manager, creating them using a TaskManager's `createTask` method will keep your tasks housed in one container.
 
 #### Constructor
 
@@ -81,24 +102,3 @@ While tasks can be created and run independently of a task manager, creating the
     -   **time**: The cron time string (defaults to every five minutes).
     -   **timeZone**: The timezone in which to operate the job (optional).
     -   **Returns**: The newly created `CronJob` instance.
-
-### `TaskManager`
-
-**Description**: Manages tasks to ensure they do not run in parallel.
-
-#### Constructor
-
--   **`constructor()`**
-    -   Initializes an empty task manager.
-
-#### Properties
-
--   **`tasks`**: An object that stores tasks by their identifier.
-
-#### Methods
-
--   **`createTask(identifier, callback)`**
-    -   Creates a new task with the provided identifier and callback function.
-    -   **identifier**: The unique identifier for the task.
-    -   **callback**: The asynchronous function associated with the task.
-    -   **Returns**: The newly created `Task` instance.
