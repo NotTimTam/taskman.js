@@ -1,11 +1,11 @@
 {
   "name": "@nottimtam/taskman.js",
-  "version": "1.1.41",
+  "version": "1.1.42",
   "description": "CRON-scheduled asynchronous task manager.",
   "main": "dist/cjs.js",
   "exports": {
     ".": {
-      "import": "./dist/esm.js",
+      "import": "./dist/esm.mjs",
       "require": "./dist/cjs.js"
     }
   },
