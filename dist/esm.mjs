@@ -41,9 +41,14 @@ export class Task {
 	 * Create a CRON job to run the task on a schedule.
 	 * @param {string} time The CRON time by which to execute. Defaults to every five minutes.
 	 * @param {string} timeZone The (optional) timezone in which to operate the job.
+	 * @param {boolean}	runOnInit Whether to run the job immediately upon scheduling. Defaults to true.
 	 * @returns The newly created job.
 	 */
-	schedule = (time = "*/5 * * * *", timeZone = "default") => {
+	schedule = (
+		time = "*/5 * * * *",
+		timeZone = "default",
+		runOnInit = true
+	) => {
 		try {
 			const job = new CronJob(
 				time,
@@ -52,7 +57,7 @@ export class Task {
 				true,
 				timeZone,
 				this,
-				true
+				runOnInit
 			);
 
 			return job;
